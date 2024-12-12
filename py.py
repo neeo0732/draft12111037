@@ -83,4 +83,76 @@ if originFlag==8: # 출발 진수가 8진수
     else:
         print("지원하지 않는 진법이거나 내부 오류가 발생했습니다.")
 
+if originFlag==12: # 출발 진수가 12진수
+    def DuoSet(q, w):
+             revBase=''
+             while q>0:
+              q,mod=divmod(q, w)
+              revBase+=str(mod)
+              return revBase[::-1]
+             fin=(DuoSet(int(origin), 60))
+    if cnvrt==2: # 2진수 변환
+       fin=(DuoSet(int(origin,12),2))
+    elif cnvrt==8: # 8진수 변환
+       fin=(DuoSet(int(origin,12),8))
+    elif cnvrt==10: # 10진수 변환
+       fin=(DuoSet(int(origin,12),10))
+    elif cnvrt==12: # 12진수 변환
+        print("lorem ipsum은, 디자인, 폰트와 같은 조형물을 테스트하는 데 사용되어지는 더미 텍스트입니다.") # Lorem Ipsum
+        fin=origin
+    elif cnvrt==16: # 16진수 변환
+        fin=(DuoSet(int(origin,12),16))
+    elif cnvrt==60: # 60진법 변환
+        fin=(DuoSet(int(origin,12),60))
+    else:
+        print("지원하지 않는 진법이거나 내부 오류가 발생했습니다.")
+
+if originFlag==16: # 출발 진수가 16진수
+    def HexaSet(q, w):
+             revBase=''
+             while q>0:
+              q,mod=divmod(q, w)
+              revBase+=str(mod)
+              return revBase[::-1]
+             fin=(HexaSet(int(origin), 60))
+    if cnvrt==2: # 2진수 변환
+       fin=(HexaSet(int(origin,16),2))
+    elif cnvrt==8: # 8진수 변환
+       fin=(HexaSet(int(origin,16),8))
+    elif cnvrt==10: # 10진수 변환
+       fin=(HexaSet(int(origin,16),10))
+    elif cnvrt==12: # 12진수 변환
+        fin=(HexaSet(int(origin,16),12))
+    elif cnvrt==16: # 16진수 변환
+        print("lorem ipsum은, 디자인, 폰트와 같은 조형물을 테스트하는 데 사용되어지는 더미 텍스트입니다.") # Lorem Ipsum
+        fin=origin
+    elif cnvrt==60: # 60진법 변환
+        fin=(HexaSet(int(origin,16),60))
+    else:
+        print("지원하지 않는 진법이거나 내부 오류가 발생했습니다.")
+
+if originFlag==60: # 출발 진수가 60진수
+    def SexaSet(q, w):
+             revBase=''
+             while q>0:
+              q,mod=divmod(q, w)
+              revBase+=str(mod)
+              return revBase[::-1]
+             fin=(SexaSet(int(origin), 60))
+    if cnvrt==2: # 2진수 변환
+       fin=(SexaSet(int(origin,60),2))
+    elif cnvrt==8: # 8진수 변환
+       fin=(SexaSet(int(origin,60),8))
+    elif cnvrt==10: # 10진수 변환
+       fin=(SexaSet(int(origin,60),10))
+    elif cnvrt==12: # 12진수 변환
+        fin=(SexaSet(int(origin,60),12))
+    elif cnvrt==16: # 16진수 변환
+        print("lorem ipsum은, 디자인, 폰트와 같은 조형물을 테스트하는 데 사용되어지는 더미 텍스트입니다.") # Lorem Ipsum
+        fin=origin
+    elif cnvrt==60: # 60진법 변환
+        fin=(SexaSet(int(origin,60),60))
+    else:
+        print("지원하지 않는 진법이거나 내부 오류가 발생했습니다.")
+
 print(fin) # 변환값 출력
