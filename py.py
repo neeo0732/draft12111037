@@ -4,12 +4,12 @@ originFlag=(int(input("어떤 진수인지 입력하여 주십시오 (예, 10진
 cnvrt=(int(input("어떤 진법으로 변환할지 입력하십시오 (예, 2진법->2): "))) # 사용자가 도착 진법 입력
 fin='' # 변환된 결과값 저장소
 
-def RadixCalc(q,w): # 사용자정의함수 `RadixCalc` 정의
-    revBase=''
-    while q>0:
-         q,mod=divmod(q,w)
-         revBase+=str(mod)
-         return revBase[::-1]
+def RadixCalc(q,w): # 사용자정의함수 `RadixCalc` 정의 / Python 내부에서 지원하지 않는 진법 변환의 경우 나눗셈/반복문/자릿수 뒤집기를 사용해 처리해야 함 / q=10진수 w=진법
+    revBase='' # 자릿수를 역순으로 뒤집기 전 결과값 저장소
+    while q>0: # 나눌 수 0 이상일 때 반복 (나눗셈 필요조건)
+         q,mod=divmod(q,w) # 나눗셈 -> 몫 q / 나머지 mod 저장
+         revBase+=str(mod) # 자릿수 뒤집기 위해 정수를 문자열로 변환
+         return revBase[::-1] # 자릿수 뒤집기
 
 if originFlag==10: # 출발 진수 10진법
     if cnvrt==2: # 2진법 변환
@@ -20,11 +20,11 @@ if originFlag==10: # 출발 진수 10진법
        print("연산에 실패함: 출발 진법과 도착 진법이 동일합니다!") # 출발-도착 진법 동일
        fin=origin
     elif cnvrt==12: # 12진법 변환
-        fin=(RadixCalc(int(origin), 12))
+        fin=(RadixCalc(int(origin),12))
     elif cnvrt==16: # 16진법 변환
         fin=(hex(int(origin))[2:])
     elif cnvrt==60: # 60진법 변환
-        fin=(RadixCalc(int(origin), 60))
+        fin=(RadixCalc(int(origin),60))
     else:
         print("지원하지 않는 진법이거나 내부 오류가 발생했습니다.")
 
