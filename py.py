@@ -9,7 +9,7 @@ def RadixCalc(q,w): # 사용자정의함수 `RadixCalc` 정의 / Python 내부�
     while q>0: # 나눌 수 0 이상일 때 반복 (나눗셈 필요조건)
          q,mod=divmod(q,w) # 나눗셈 -> 몫 q / 나머지 mod 저장
          revBase+=str(mod) # 자릿수 뒤집기 위해 정수를 문자열로 변환
-         return revBase[::-1] # 자릿수 뒤집기
+         return revBase[::-1] # 함수의 결괏값 자릿수 뒤집기
 
 if originFlag==10: # 출발 진수 10진법
     if cnvrt==2: # 2진법 변환
